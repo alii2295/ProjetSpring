@@ -21,6 +21,25 @@ public class Userservice {
     {
        return u.findById(us_name).orElse(null);
     }
+    public User update_user(String username , User us)
+    {
+        User utilisateur=u.findById(username).orElse(null);
+        if (utilisateur!=null)
+        {
+            utilisateur.setUsername(us.getUsername());
+            utilisateur.setPassword(us.getPassword());
+            utilisateur.setMail(us.getMail());
+            utilisateur.setNumber(us.getNumber());
+            return u.save(us);
+
+        }
+        else
+        {
+            return null;
+
+        }
+
+    }
 
 
 

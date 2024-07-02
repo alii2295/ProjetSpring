@@ -29,6 +29,11 @@ public class usercontroler {
          us.delete_user(username);
 
     }
+    @PutMapping("/{username}")
+    public User update_user(@PathVariable String username , @RequestBody User utilisateur )
+    {
+        return us.update_user(username,utilisateur);
+    }
 
 
 

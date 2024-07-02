@@ -15,7 +15,7 @@ public class Produit {
     private long id ;
     private String name ;
     private double price;
-   @ManyToOne
+    @ManyToOne
     @JoinColumn(name="id_cat",nullable = false)
     private Categorie categorie;
     public long getId() {
