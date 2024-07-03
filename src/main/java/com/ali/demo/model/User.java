@@ -1,12 +1,11 @@
 package com.ali.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,10 +17,6 @@ public class User {
     private String password;
     private String mail;
     private Long number;
-
-
-
-
-
-
+    @OneToMany(mappedBy="u")
+    private List<Commande> commandes;
 }

@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,29 +21,9 @@ public class Produit {
     @ManyToOne
     @JoinColumn(name="id_cat",nullable = false)
     private Categorie categorie;
-    public long getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
-    }
-    public double getPrice() {
-        return price;
-    }
-    public void setId(long id) {
-        this.id = id;
-    }
+    @OneToMany(mappedBy="p")
+    private List<Commande> commandes;
 
-    public void setName(String name) {
-        this.name = name;}
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setCategorie(Categorie categorie ) {
-        this.categorie =categorie;
-
-    }
 }
 
 
